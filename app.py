@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 
-
+st.image('Anudip logo.jpg', width=800)
 st.set_page_config("Anudip Placement Chatbot", page_icon=":book")
 
 def load_data():
