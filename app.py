@@ -79,15 +79,10 @@ def Enrollment():
         else:
             st.warning("No picture available for this answer.")
 
+st.title('Navigation')
+selection = st.selectbox("Go to", ("Placement", "Enrollment"))
 
-if __name__ == "__main__":
-     pages = {
-        "Placement": Placement,
-        "Enrollment": Enrollment,
-    }
-st.sidebar.title('Navigation')
-selection = st.sidebar.selectbox("Go to", list(pages.keys()))
-
-page = pages[selection]
-page()
-
+if selection == "Placement":
+    Placement()
+elif selection == "Enrollment":
+    Enrollment()
