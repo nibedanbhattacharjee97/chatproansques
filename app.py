@@ -79,7 +79,6 @@ def Enrollment():
         else:
             st.warning("No picture available for this answer.")
 
-st.title('Navigation')
 selection = st.selectbox("Go to", ("Placement", "Enrollment"))
 
 if selection == "Placement":
