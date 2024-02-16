@@ -26,7 +26,7 @@ def Placement():
     data = load_data()
 
     # User input
-    user_question = st.selectbox("Ask a question:", data['Question'].unique())
+    user_question = st.selectbox("TYPE / SELECT YOUR QUESTION :", data['Question'].unique())
 
     if st.button("Get Answer"):
         # Get the answer and picture path
