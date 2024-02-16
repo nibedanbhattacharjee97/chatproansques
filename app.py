@@ -79,8 +79,7 @@ def Enrollment():
         else:
             st.warning("No picture available for this answer.")
 
-#selection = st.selectbox("Select", ("Placement", "Enrollment"))
- selection = st.selectbox("**Select**", ("Placement", "Enrollment"), format_func=lambda x: x)
+selection = st.selectbox("Select", ("Placement", "Enrollment"))
 if selection == "Placement":
     Placement()
 elif selection == "Enrollment":
