@@ -3,7 +3,7 @@ import pandas as pd
 
 
 st.set_page_config("Anudip Placement Chatbot", page_icon=":book")
-st.image("AnudipLogoWithGit.png")
+st.image("AnudipLogoWithGit_Update.png")
 def load_data():
     # Load the CSV file
     df = pd.read_csv("data.csv")
