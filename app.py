@@ -20,7 +20,7 @@ def get_answer(question, data):
         return "I'm sorry, I don't know the answer to that question.", None
 
 def Placement():
-    st.title("Placement Documents Chatbot")
+    st.title("Placement")
 
     # Load data from CSV
     data = load_data()
@@ -58,7 +58,7 @@ def get_answer(question, data):
 
 
 def Enrollment():
-    st.title("Enrollment Documents Chatbot")
+    st.title("Enrollment")
 
     # Load data from CSV
     data = load_dataen()
