@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 
 
-st.set_page_config("Anudip Placement Chatbot", page_icon=":book")
+st.set_page_config("Anudip Chatbot", page_icon=":book")
 st.image("AnudipLogoWithGit_Update_2.png")
 def load_data():
     # Load the CSV file
