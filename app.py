@@ -64,7 +64,7 @@ def Enrollment():
     data = load_dataen()
 
     # User input
-    user_question = st.selectbox("Ask a question:", data['Question'].unique())
+    user_question = st.selectbox("TYPE / SELECT YOUR QUESTION :", data['Question'].unique())
 
     if st.button("Get Answer"):
         # Get the answer and picture path
