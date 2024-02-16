@@ -78,8 +78,8 @@ def Enrollment():
             st.image(picture_path, caption='Answer Image', use_column_width=True)
         else:
             st.warning("No picture available for this answer.")
-st.text('Select Option')
-selection = st.selectbox("   ", ("Placement", "Enrollment"))
+#st.text('Select Option')
+selection = st.selectbox("Select Option", ("Placement", "Enrollment"))
 if selection == "Placement":
     Placement()
 elif selection == "Enrollment":
