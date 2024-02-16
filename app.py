@@ -78,8 +78,8 @@ def Enrollment():
             st.image(picture_path, caption='Answer Image', use_column_width=True)
         else:
             st.warning("No picture available for this answer.")
-            st.title('Select Option')
-selection = st.selectbox("Placement", "Enrollment")
+st.title('Navigation')
+selection = st.selectbox("Go to", ("Placement", "Enrollment"))
 if selection == "Placement":
     Placement()
 elif selection == "Enrollment":
