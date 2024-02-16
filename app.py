@@ -79,23 +79,6 @@ def Enrollment():
         else:
             st.warning("No picture available for this answer.")
 
-st.markdown(
-    """
-    <style>
-    div[role="combobox"] > div:first-child {
-        background-color: blue !important;
-        color: blue !important;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
-
-
-
-
-
 #st.text('Select Option')
 selection = st.selectbox("Select Option :", ("Placement", "Enrollment"))
 if selection == "Placement":
