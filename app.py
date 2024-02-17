@@ -120,7 +120,7 @@ def spoc():
 
 
 #st.text('Select Option')
-selection = st.selectbox("Select Option :", ("Placement", "Enrollment"))
+selection = st.selectbox("Select Option :", ("Placement", "Enrollment","M&E SPOC"))
 if selection == "Placement":
     Placement()
 elif selection == "Enrollment":
