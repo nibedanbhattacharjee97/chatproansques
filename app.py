@@ -97,7 +97,7 @@ def get_answer(question, data):
 
 
 def spoc():
-    st.title("SPOC")
+    st.title("M&E SPOC")
 
     # Load data from CSV
     data = load_datasp()
@@ -125,5 +125,5 @@ if selection == "Placement":
     Placement()
 elif selection == "Enrollment":
     Enrollment()
-elif selection == "SPOC":
+elif selection == "M&E SPOC":
     spoc()
