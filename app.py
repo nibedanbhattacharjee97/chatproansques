@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 
-
 st.set_page_config("Anudip Chatbot", page_icon=":book")
 st.image("AnudipLogoWithGit_Update_3.png")
 def load_data():
@@ -37,7 +36,7 @@ def Placement():
 
         # Display the picture if available
         if picture_path:
-            st.image(picture_path, caption='Answer Image', use_column_width=True)
+            st.image(picture_path, caption='', use_column_width=True)
         else:
             st.warning("No picture available for this answer.")
 
@@ -75,7 +74,7 @@ def Enrollment():
 
         # Display the picture if available
         if picture_path:
-            st.image(picture_path, caption='Answer Image', use_column_width=True)
+            st.image(picture_path, caption='', use_column_width=True)
         else:
             st.warning("No picture available for this answer.")
 
@@ -114,7 +113,7 @@ def spoc():
 
         # Display the picture if available
         if picture_path:
-            st.image(picture_path, caption='Answer Image', use_column_width=True)
+            st.image(picture_path, caption='', use_column_width=True)
         else:
             st.warning("No picture available for this answer.")
 
