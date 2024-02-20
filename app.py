@@ -3,6 +3,7 @@ import pandas as pd
 
 st.set_page_config("Anudip Chatbot", page_icon=":book")
 st.image("AnudipLogoWithGit_Update_3.png")
+
 def load_data():
     # Load the CSV file
     df = pd.read_csv("data.csv")
@@ -44,17 +45,6 @@ def load_dataen():
     # Load the CSV file
     df = pd.read_csv("dataen.csv")
     return df
-
-def get_answer(question, data):
-    # Find the corresponding answer for the given question
-    answer_row = data[data['Question'] == question]
-    if not answer_row.empty:
-        answer = answer_row.iloc[0]['Answer']
-        picture_path = answer_row.iloc[0]['PicturePath']
-        return answer, picture_path
-    else:
-        return "I'm sorry, I don't know the answer to that question.", None
-
 
 def Enrollment():
     st.title("Enrollment")
@@ -117,8 +107,7 @@ def spoc():
         else:
             st.warning("No picture available for this answer.")
 
-
-#st.text('Select Option')
+# st.text('Select Option')
 selection = st.selectbox("Select Option :", ("Placement", "Enrollment","M&E SPOC"))
 if selection == "Placement":
     Placement()
@@ -126,3 +115,7 @@ elif selection == "Enrollment":
     Enrollment()
 elif selection == "M&E SPOC":
     spoc()
+
+# Adding Google Form link
+google_form_link = "[Click here to fill the form](https://forms.gle/zsf1S146zbaaHuiWA)"
+st.markdown(google_form_link)
