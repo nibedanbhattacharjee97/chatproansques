@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import os
+import subprocess
 
 st.set_page_config("Anudip Chatbot", page_icon=":book")
 st.image("AnudipLogoWithGit_Update_3.png")
@@ -47,6 +48,11 @@ def save_question(question, email):
     new_data = pd.DataFrame({'Question': [question], 'Email': [email]})
     new_data.to_csv('user_questions.csv', mode='a', index=False, header=not os.path.exists('user_questions.csv'))
 
+    # Git commands to add, commit, and push changes
+    subprocess.run(["git", "add", "user_questions.csv"])
+    subprocess.run(["git", "commit", "-m", "Added new user question"])
+    subprocess.run(["git", "push"])
+
 def user_input():
     st.title("Ask a Question")
 
@@ -87,7 +93,6 @@ def Enrollment():
         else:
             st.warning("No picture available for this answer.")
 
-
 def load_datasp():
     # Load the CSV file
     df = pd.read_csv("datasp.csv")
@@ -125,4 +130,3 @@ elif selection == "M&E SPOC":
     spoc()
 elif selection == "Ask a Question":
     user_input()
-    
