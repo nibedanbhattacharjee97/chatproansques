@@ -1,11 +1,8 @@
 import streamlit as st
 import pandas as pd
-import os
-import subprocess
 
 st.set_page_config("Anudip Chatbot", page_icon=":book")
 st.image("AnudipLogoWithGit_Update_3.png")
-
 def load_data():
     # Load the CSV file
     df = pd.read_csv("data.csv")
@@ -43,33 +40,21 @@ def Placement():
         else:
             st.warning("No picture available for this answer.")
 
-def save_question(question, email):
-    # Save question and email to CSV
-    new_data = pd.DataFrame({'Question': [question], 'Email': [email]})
-    new_data.to_csv('user_questions.csv', mode='a', index=False, header=not os.path.exists('user_questions.csv'))
-
-    # Git commands to add, commit, and push changes
-    subprocess.run(["git", "add", "user_questions.csv"])
-    subprocess.run(["git", "commit", "-m", "Added new user question"])
-    subprocess.run(["git", "push"])
-
-def user_input():
-    st.title("Ask a Question")
-
-    question = st.text_input("Enter your question")
-    email = st.text_input("Enter your email")
-
-    if st.button("Submit"):
-        if question.strip() != "" and email.strip() != "":
-            save_question(question, email)
-            st.success("Question submitted successfully!")
-        else:
-            st.warning("Please provide both question and email.")
-
 def load_dataen():
     # Load the CSV file
     df = pd.read_csv("dataen.csv")
     return df
+
+def get_answer(question, data):
+    # Find the corresponding answer for the given question
+    answer_row = data[data['Question'] == question]
+    if not answer_row.empty:
+        answer = answer_row.iloc[0]['Answer']
+        picture_path = answer_row.iloc[0]['PicturePath']
+        return answer, picture_path
+    else:
+        return "I'm sorry, I don't know the answer to that question.", None
+
 
 def Enrollment():
     st.title("Enrollment")
@@ -93,10 +78,22 @@ def Enrollment():
         else:
             st.warning("No picture available for this answer.")
 
+
 def load_datasp():
     # Load the CSV file
     df = pd.read_csv("datasp.csv")
     return df
+
+def get_answer(question, data):
+    # Find the corresponding answer for the given question
+    answer_row = data[data['Question'] == question]
+    if not answer_row.empty:
+        answer = answer_row.iloc[0]['Answer']
+        picture_path = answer_row.iloc[0]['PicturePath']
+        return answer, picture_path
+    else:
+        return "I'm sorry, I don't know the answer to that question.", None
+
 
 def spoc():
     st.title("M&E SPOC")
@@ -120,13 +117,12 @@ def spoc():
         else:
             st.warning("No picture available for this answer.")
 
-selection = st.selectbox("Select Option :", ("Placement", "Enrollment", "M&E SPOC", "Ask a Question"))
 
+#st.text('Select Option')
+selection = st.selectbox("Select Option :", ("Placement", "Enrollment","M&E SPOC"))
 if selection == "Placement":
     Placement()
 elif selection == "Enrollment":
     Enrollment()
 elif selection == "M&E SPOC":
     spoc()
-elif selection == "Ask a Question":
-    user_input()
