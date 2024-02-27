@@ -110,10 +110,10 @@ if department == "M&E Department":
         spoc()
     
 elif department == "Finance Department":
-    st.image("upcoming.jpeg")
+    st.image("upcoming.png")
 
 elif department == "HR Depertment":
-    st.image("upcoming.jpeg")
+    st.image("upcoming.png")
 
 # Adding Google Form link
 google_form_link = "[For Other Questions](https://forms.gle/zsf1S146zbaaHuiWA)"
