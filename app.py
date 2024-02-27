@@ -74,17 +74,6 @@ def load_datasp():
     df = pd.read_csv("datasp.csv")
     return df
 
-def get_answer(question, data):
-    # Find the corresponding answer for the given question
-    answer_row = data[data['Question'] == question]
-    if not answer_row.empty:
-        answer = answer_row.iloc[0]['Answer']
-        picture_path = answer_row.iloc[0]['PicturePath']
-        return answer, picture_path
-    else:
-        return "I'm sorry, I don't know the answer to that question.", None
-
-
 def spoc():
     st.title("M&E SPOC")
 
@@ -107,14 +96,24 @@ def spoc():
         else:
             st.warning("No picture available for this answer.")
 
-# st.text('Select Option')
-selection = st.selectbox("Select Option :", ("Placement", "Enrollment","M&E SPOC"))
-if selection == "Placement":
-    Placement()
-elif selection == "Enrollment":
-    Enrollment()
-elif selection == "M&E SPOC":
-    spoc()
+# Department selection
+department = st.selectbox("Select Department :", ("M&E Department", "Finance Department", "HR Depertment"))
+
+# If ME Department is selected, show the options Placement, Enrollment, and M&E SPOC
+if department == "M&E Department":
+    selection = st.selectbox("Select Option :", ("Placement", "Enrollment", "M&E SPOC"))
+    if selection == "Placement":
+        Placement()
+    elif selection == "Enrollment":
+        Enrollment()
+    elif selection == "M&E SPOC":
+        spoc()
+    
+elif department == "Finance Department":
+    st.image("upcoming.jpeg")
+
+elif department == "HR Depertment":
+    st.image("upcoming.jpeg")
 
 # Adding Google Form link
 google_form_link = "[For Other Questions](https://forms.gle/zsf1S146zbaaHuiWA)"
