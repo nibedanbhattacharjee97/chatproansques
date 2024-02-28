@@ -96,18 +96,49 @@ def spoc():
         else:
             st.warning("No picture available for this answer.")
 
+def load_datalink():
+    # Load the CSV file
+    df = pd.read_csv("datali.csv")
+    return df
+
+def link():
+    st.title("Report Link")
+
+    # Load data from CSV
+    data = load_datalink()
+
+    # User input
+    user_question = st.selectbox("TYPE / SELECT YOUR QUESTION :", data['Question'].unique())
+
+    if st.button("Get Answer"):
+        # Get the answer and picture path
+        answer, picture_path = get_answer(user_question, data)
+
+        # Display the answer
+        st.markdown(f"**Answer:** {answer}")
+
+        # Display the picture if available
+        if picture_path:
+            st.image(picture_path, caption='', use_column_width=True)
+        else:
+            st.warning("No picture available for this answer.")
+
+
+
 # Department selection
 department = st.selectbox("Select Department :", ("M&E Department", "Finance Department", "HR Depertment"))
 
 # If ME Department is selected, show the options Placement, Enrollment, and M&E SPOC
 if department == "M&E Department":
-    selection = st.selectbox("Select Option :", ("Placement", "Enrollment", "M&E SPOC"))
+    selection = st.selectbox("Select Option :", ("Placement", "Enrollment", "M&E SPOC", "Report Link"))
     if selection == "Placement":
         Placement()
     elif selection == "Enrollment":
         Enrollment()
     elif selection == "M&E SPOC":
         spoc()
+    elif selection == "Report Link":
+        link()
     
 elif department == "Finance Department":
     st.image("upcoming.png")
