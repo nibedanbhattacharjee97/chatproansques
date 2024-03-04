@@ -21,20 +21,16 @@ def get_answer(question, data):
 
 def Placement():
     st.title("Placement")
-
     # Load data from CSV
     data = load_data()
-
     # User input
     user_question = st.selectbox("TYPE / SELECT YOUR QUESTION :", data['Question'].unique())
 
     if st.button("Get Answer"):
         # Get the answer and picture path
         answer, picture_path = get_answer(user_question, data)
-
         # Display the answer
         st.markdown(f"**Answer:** {answer}")
-
         # Display the picture if available
         if picture_path:
             st.image(picture_path, caption='', use_column_width=True)
@@ -48,26 +44,44 @@ def load_dataen():
 
 def Enrollment():
     st.title("Enrollment")
-
     # Load data from CSV
     data = load_dataen()
-
     # User input
     user_question = st.selectbox("TYPE / SELECT YOUR QUESTION :", data['Question'].unique())
 
     if st.button("Get Answer"):
         # Get the answer and picture path
         answer, picture_path = get_answer(user_question, data)
-
         # Display the answer
         st.markdown(f"**Answer:** {answer}")
-
         # Display the picture if available
         if picture_path:
             st.image(picture_path, caption='', use_column_width=True)
         else:
             st.warning("No picture available for this answer.")
 
+def load_datafi():
+    # Load the CSV file
+    df = pd.read_csv("datafi.csv")
+    return df
+
+def FinanceDepartment():
+    st.title("Finance Department")
+    # Load data from CSV
+    data = load_datafi()
+    # User input
+    user_question = st.selectbox("TYPE / SELECT YOUR QUESTION :", data['Question'].unique())
+
+    if st.button("Get Answer"):
+        # Get the answer and picture path
+        answer, picture_path = get_answer(user_question, data)
+        # Display the answer
+        st.markdown(f"**Answer:** {answer}")
+        # Display the picture if available
+        if picture_path:
+            st.image(picture_path, caption='', use_column_width=True)
+        else:
+            st.warning("No picture available for this answer.")
 
 def load_datasp():
     # Load the CSV file
@@ -76,20 +90,16 @@ def load_datasp():
 
 def spoc():
     st.title("M&E SPOC")
-
     # Load data from CSV
     data = load_datasp()
-
     # User input
     user_question = st.selectbox("TYPE / SELECT YOUR QUESTION :", data['Question'].unique())
 
     if st.button("Get Answer"):
         # Get the answer and picture path
         answer, picture_path = get_answer(user_question, data)
-
         # Display the answer
         st.markdown(f"**Answer:** {answer}")
-
         # Display the picture if available
         if picture_path:
             st.image(picture_path, caption='', use_column_width=True)
@@ -103,30 +113,24 @@ def load_datalink():
 
 def link():
     st.title("Report Link")
-
     # Load data from CSV
     data = load_datalink()
-
     # User input
     user_question = st.selectbox("TYPE / SELECT YOUR QUESTION :", data['Question'].unique())
 
     if st.button("Get Answer"):
         # Get the answer and picture path
         answer, picture_path = get_answer(user_question, data)
-
         # Display the answer
         st.markdown(f"**Answer:** {answer}")
-
         # Display the picture if available
         if picture_path:
             st.image(picture_path, caption='', use_column_width=True)
         else:
             st.warning("No picture available for this answer.")
 
-
-
 # Department selection
-department = st.selectbox("Select Department :", ("M&E Department", "Finance Department", "HR Depertment"))
+department = st.selectbox("Select Department :", ("M&E Department", "Finance Department", "HR Department"))
 
 # If ME Department is selected, show the options Placement, Enrollment, and M&E SPOC
 if department == "M&E Department":
@@ -140,10 +144,12 @@ if department == "M&E Department":
     elif selection == "M&E Reports":
         link()
     
+# If Finance Department is selected, show the Finance Department options
 elif department == "Finance Department":
-    st.image("upcoming.png")
-
-elif department == "HR Depertment":
+    selection = st.selectbox("Select Option :", ("Commercial & Payable SPOC List",))
+    if selection == "Commercial & Payable SPOC List":
+        FinanceDepartment()
+elif department == "HR Department":
     st.image("upcoming.png")
 
 # Adding Google Form link
