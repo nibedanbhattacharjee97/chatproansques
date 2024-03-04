@@ -112,7 +112,7 @@ def load_datalink():
     return df
 
 def link():
-    st.title("Report Link")
+    st.title("Reports")
     # Load data from CSV
     data = load_datalink()
     # User input
@@ -153,5 +153,5 @@ elif department == "HR Department":
     st.image("upcoming.png")
 
 # Adding Google Form link
-google_form_link = "[For Other Questions](https://forms.gle/zsf1S146zbaaHuiWA)"
+google_form_link = "[For Other Questions Please](https://forms.gle/zsf1S146zbaaHuiWA)"
 st.markdown(google_form_link)
