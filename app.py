@@ -112,7 +112,7 @@ def load_datalink():
     return df
 
 def link():
-    st.title("M&E Reports")
+    st.title("Reports")
     # Load data from CSV
     data = load_datalink()
     # User input
