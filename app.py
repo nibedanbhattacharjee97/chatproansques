@@ -112,7 +112,7 @@ def load_datalink():
     return df
 
 def link():
-    st.title("Reports")
+    st.title("M&E Reports")
     # Load data from CSV
     data = load_datalink()
     # User input
@@ -121,13 +121,13 @@ def link():
     if st.button("Get Answer"):
         # Get the answer and picture path
         answer, picture_path = get_answer(user_question, data)
-        # Display the answer
-        st.markdown(f"**Answer:** {answer}")
         # Display the picture if available
         if picture_path:
             st.image(picture_path, caption='', use_column_width=True)
         else:
             st.warning("No picture available for this answer.")
+        # Display the answer
+        st.markdown(f"**Answer:** {answer}")
 
 # Department selection
 department = st.selectbox("Select Department :", ("M&E Department", "Finance Department", "HR Department"))
@@ -153,5 +153,5 @@ elif department == "HR Department":
     st.image("upcoming.png")
 
 # Adding Google Form link
-google_form_link = "[For Other Questions](https://forms.gle/zsf1S146zbaaHuiWA)"
+google_form_link = "[For Other Questions Please](https://forms.gle/zsf1S146zbaaHuiWA)"
 st.markdown(google_form_link)
