@@ -1,3 +1,4 @@
-Question,Answer,PicturePath
-Placement Report,For More Information  :  https://lookerstudio.google.com/s/odgNNib9N0c,picreport/plac.png
-Enrollment Report,For More Information  :  https://lookerstudio.google.com/s/qEXCk3ujQKg,picreport/enroll.png
+Question,PicturePath,Answer
+Placement Report,picreport/plac.png,For More Information  :  https://lookerstudio.google.com/s/odgNNib9N0c
+Enrollment Report,picreport/enroll.png,For More Information  :  https://lookerstudio.google.com/s/qEXCk3ujQKg
+Educational Document Status Report,picreport/edudoc.png,For More Details Click The Link : https://docs.google.com/spreadsheets/d/1TALqJvg6Kwa4jAHJZr3okH_GJURTqawxsjOeIw35nrY/edit?usp=sharing
