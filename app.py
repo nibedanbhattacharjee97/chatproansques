@@ -134,15 +134,13 @@ department = st.selectbox("Select Department :", ("M&E Department", "Finance Dep
 
 # If ME Department is selected, show the options Placement, Enrollment, and M&E SPOC
 if department == "M&E Department":
-    selection = st.selectbox("Select Option :", ("Placement Parameters", "Enrollment Parameters", "M&E SPOC Details", "M&E Reports"))
+    selection = st.selectbox("Select Option :", ("Placement Parameters", "Enrollment Parameters", "M&E SPOC Details"))
     if selection == "Placement Parameters":
         Placement()
     elif selection == "Enrollment Parameters":
         Enrollment()
     elif selection == "M&E SPOC Details":
         spoc()
-    elif selection == "M&E Reports":
-        link()
     
 # If Finance Department is selected, show the Finance Department options
 elif department == "Finance Department":
