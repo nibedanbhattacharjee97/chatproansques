@@ -1,7 +1,7 @@
 ﻿Question,Answer,PicturePath
 Calling Script Placement,What is the calling script for Placement verification? As Follow,images/Calling_P.png
 Document Verification Process,M&E Departmental Processing Flowchart? (Placement),images/FlowDocument.png
-What are the Mandatory Fields for Placement Document?,"Informations like – Company Name, Designation, Date of Joining, and Salary should exactly match with the attached documents in the CMIS portal.",images/PDF.pdf
+What are the Mandatory Fields for Placement Document?,"Informations like – Company Name, Designation, Date of Joining, and Salary should exactly match with the attached documents in the CMIS portal.",images/pdf.png
 What is the required DOJ format For CMIS Portal?,DOJ should be uploaded in the DD/MM/YYYY format in the CMIS portal.,images/no fill.jpg
 If the student is placed through consultancy OR the employer name is different from placed company/Sister concern?,"In case of uploaded documents differing from mentioned data of Company Name, especially for Sister concern or subordinate company. Please provide the supporting documentation to justify the same or mention the Sister company name in the bracket. [Like - ABC Company (XYZ Company)].",images/no fill.jpg
 What kind of E-Mail & Mail-ID is approved as placement document?,"Forwarded Mail will not be accepted, only if the received E-Mailis from concerned employer's Mail-ID & It should be in PDF/JPG format. [ Like - Mail from ABC.co.in/.org/.com, Mail To - The Student OR anudip.org].",images/no fill.jpg
