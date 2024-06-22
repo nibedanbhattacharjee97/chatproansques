@@ -151,8 +151,8 @@ elif department == "HR Department":
     st.image("upcoming.png")
 
 # Adding BookslotDetails Form link
-SPOC_SLOT_BOOK_lINK = "[For SPOC SLOT BOOKING PLEASE CLICK The LINK](https://bookslotapp.streamlit.app/)"
-st.markdown(SPOC_SLOT_BOOK_lINK)
+SPOC_SLOT_BOOK_LINK = "[For SPOC SLOT BOOKING PLEASE CLICK HERE](https://bookslotapp.streamlit.app/)"
+st.markdown(SPOC_SLOT_BOOK_LINK, unsafe_allow_html=True)
 
 # Adding Google Form link
 google_form_link = "[For Other Query Please Fill This Form](https://forms.gle/zsf1S146zbaaHuiWA)"
