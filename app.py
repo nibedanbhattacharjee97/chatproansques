@@ -5,7 +5,7 @@ st.set_page_config("Anudip Chatbot", page_icon=":book")
 st.image("AnudipLogoWithGit_Update_3.png")
 
 # Adding BookslotDetails Form link
-SPOC_SLOT_BOOK_LINK = "[For SPOC SLOT BOOKING PLEASE CLICK HERE](https://bookslotapp.streamlit.app/)"
+SPOC_SLOT_BOOK_LINK = "[CLICK HERE TO BOOK SPOC SLOT BOOKING](https://bookslotapp.streamlit.app/)"
 st.markdown(SPOC_SLOT_BOOK_LINK, unsafe_allow_html=True)
 
 
