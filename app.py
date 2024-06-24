@@ -4,6 +4,11 @@ import pandas as pd
 st.set_page_config("Anudip Chatbot", page_icon=":book")
 st.image("AnudipLogoWithGit_Update_3.png")
 
+# Adding BookslotDetails Form link
+SPOC_SLOT_BOOK_LINK = "[For SPOC SLOT BOOKING PLEASE CLICK HERE](https://bookslotapp.streamlit.app/)"
+st.markdown(SPOC_SLOT_BOOK_LINK, unsafe_allow_html=True)
+
+
 def load_data():
     # Load the CSV file
     df = pd.read_csv("data.csv")
@@ -150,9 +155,6 @@ elif department == "Finance Department":
 elif department == "HR Department":
     st.image("upcoming.png")
 
-# Adding BookslotDetails Form link
-SPOC_SLOT_BOOK_LINK = "[For SPOC SLOT BOOKING PLEASE CLICK HERE](https://bookslotapp.streamlit.app/)"
-st.markdown(SPOC_SLOT_BOOK_LINK, unsafe_allow_html=True)
 
 # Adding Google Form link
 google_form_link = "[For Other Query Please Fill This Form](https://forms.gle/zsf1S146zbaaHuiWA)"
