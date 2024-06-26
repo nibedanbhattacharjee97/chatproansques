@@ -74,7 +74,7 @@ def load_datacerti():
 def certificate():
     st.title("Certificate")
     # Load data from CSV
-    data = load_dataen()
+    data = load_datacerti()
     # User input
     user_question = st.selectbox("TYPE / SELECT YOUR QUESTION :", data['Question'].unique())
 
