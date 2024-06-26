@@ -64,6 +64,30 @@ def Enrollment():
             st.image(picture_path, caption='', use_column_width=True)
         else:
             st.warning("No picture available for this answer.")
+# certificate
+
+def load_datacerti():
+    # Load the CSV file
+    df = pd.read_csv("datacerti.csv")
+    return df
+
+def certificate():
+    st.title("Certificate")
+    # Load data from CSV
+    data = load_dataen()
+    # User input
+    user_question = st.selectbox("TYPE / SELECT YOUR QUESTION :", data['Question'].unique())
+
+    if st.button("Get Answer"):
+        # Get the answer and picture path
+        answer, picture_path = get_answer(user_question, data)
+        # Display the answer
+        st.markdown(f"**Answer:** {answer}")
+        # Display the picture if available
+        if picture_path:
+            st.image(picture_path, caption='', use_column_width=True)
+        else:
+            st.warning("No picture available for this answer.")
 
 def load_datafi():
     # Load the CSV file
@@ -139,13 +163,15 @@ department = st.selectbox("Select Department :", ("M&E Department", "Finance Dep
 
 # If ME Department is selected, show the options Placement, Enrollment, and M&E SPOC
 if department == "M&E Department":
-    selection = st.selectbox("Select Option :", ("Placement Parameters", "Enrollment Parameters", "M&E SPOC Details"))
+    selection = st.selectbox("Select Option :", ("Placement Parameters", "Enrollment Parameters", "M&E SPOC Details","Certificate Process"))
     if selection == "Placement Parameters":
         Placement()
     elif selection == "Enrollment Parameters":
         Enrollment()
     elif selection == "M&E SPOC Details":
         spoc()
+    elif selection == "Certificate Process":
+        certificate()
     
 # If Finance Department is selected, show the Finance Department options
 elif department == "Finance Department":
