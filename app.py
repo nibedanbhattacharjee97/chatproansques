@@ -181,6 +181,9 @@ elif department == "Finance Department":
 elif department == "HR Department":
     st.image("upcoming.png")
 
+# Adding Google Form link
+google_form_link = "[Retention Data](https://docs.google.com/spreadsheets/d/12vmZRZMWVuaqysaSRS0qVPAun53W6EsSztx9uUSiWzw/edit?usp=sharing)"
+st.markdown(google_form_link)
 
 # Adding Google Form link
 google_form_link = "[For Other Query Please Fill This Form](https://forms.gle/zsf1S146zbaaHuiWA)"
