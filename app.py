@@ -146,15 +146,14 @@ def link():
     user_question = st.selectbox("TYPE / SELECT YOUR QUESTION :", data['Question'].unique())
 
     if st.button("Get Answer"):
-        # Get the answer and picture path
-        answer, picture_path = get_answer(user_question, data)
-        # Display the picture if available
-        if picture_path:
-            st.image(picture_path, caption='', use_column_width=True)
+        # Find the corresponding link for the given question
+        link_row = data[data['Question'] == user_question]
+        if not link_row.empty:
+            report_link = link_row.iloc[0]['Link']
+            # Display the link as clickable
+            st.markdown(f"[View Report]({report_link})", unsafe_allow_html=True)
         else:
-            st.warning("No picture available for this answer.")
-        # Display the answer
-        st.markdown(f"**Answer:** {answer}")
+            st.warning("No link available for this question.")
 
 # Department selection
 department = st.selectbox("Select Department :", ("M&E Department", "Finance Department", "HR Department"))
