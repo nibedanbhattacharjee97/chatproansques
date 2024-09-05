@@ -8,7 +8,6 @@ st.image("AnudipLogoWithGit_Update_3.png")
 SPOC_SLOT_BOOK_LINK = "[CLICK HERE TO BOOK SPOC SLOT](https://bookslotapp.streamlit.app/)"
 st.markdown(SPOC_SLOT_BOOK_LINK, unsafe_allow_html=True)
 
-
 def load_data():
     # Load the CSV file
     df = pd.read_csv("data.csv")
@@ -64,7 +63,6 @@ def Enrollment():
             st.image(picture_path, caption='', use_column_width=True)
         else:
             st.warning("No picture available for this answer.")
-# certificate
 
 def load_datacerti():
     # Load the CSV file
@@ -161,9 +159,9 @@ def link():
 # Department selection
 department = st.selectbox("Select Department :", ("M&E Department", "Finance Department", "HR Department"))
 
-# If ME Department is selected, show the options Placement, Enrollment, and M&E SPOC
+# If ME Department is selected, show the options Placement, Enrollment, M&E SPOC, Certificate, and Reports
 if department == "M&E Department":
-    selection = st.selectbox("Select Option :", ("Placement Parameters", "Enrollment Parameters", "M&E SPOC Details","Certificate Process"))
+    selection = st.selectbox("Select Option :", ("Placement Parameters", "Enrollment Parameters", "M&E SPOC Details", "Certificate Process", "Reports"))
     if selection == "Placement Parameters":
         Placement()
     elif selection == "Enrollment Parameters":
@@ -172,19 +170,22 @@ if department == "M&E Department":
         spoc()
     elif selection == "Certificate Process":
         certificate()
+    elif selection == "Reports":
+        link()
     
 # If Finance Department is selected, show the Finance Department options
 elif department == "Finance Department":
     selection = st.selectbox("Select Option :", ("Commercial & Payable SPOC List",))
     if selection == "Commercial & Payable SPOC List":
         FinanceDepartment()
+
+# If HR Department is selected
 elif department == "HR Department":
     st.image("upcoming.png")
 
-# Adding Google Form link
-google_form_link = "[Retention Data](https://docs.google.com/spreadsheets/d/12vmZRZMWVuaqysaSRS0qVPAun53W6EsSztx9uUSiWzw/edit?usp=sharing)"
-st.markdown(google_form_link)
+# Adding Google Form links
+google_form_link_retention = "[Retention Data](https://docs.google.com/spreadsheets/d/12vmZRZMWVuaqysaSRS0qVPAun53W6EsSztx9uUSiWzw/edit?usp=sharing)"
+st.markdown(google_form_link_retention)
 
-# Adding Google Form link
-google_form_link = "[For Other Query Please Fill This Form](https://forms.gle/zsf1S146zbaaHuiWA)"
-st.markdown(google_form_link)
+google_form_link_query = "[For Other Query Please Fill This Form](https://forms.gle/zsf1S146zbaaHuiWA)"
+st.markdown(google_form_link_query)
