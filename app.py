@@ -156,7 +156,7 @@ def link():
             st.warning("No link available for this question.")
 
 # Department selection
-department = st.selectbox("Select Department :", ("M&E Department", "Finance Department", "HR Department"))
+department = st.selectbox("Select Department :", ("M&E Department")
 
 # If ME Department is selected, show the options Placement, Enrollment, M&E SPOC, Certificate, and Reports
 if department == "M&E Department":
