@@ -156,7 +156,7 @@ def link():
             st.warning("No link available for this question.")
 
 # Department selection
-department = st.selectbox("Select Department :", ("M&E Department", "Finance Department", "HR Department"))
+department = st.selectbox("Select Department :", ("M&E Department",))
 
 # If ME Department is selected, show the options Placement, Enrollment, M&E SPOC, Certificate, and Reports
 if department == "M&E Department":
@@ -172,15 +172,6 @@ if department == "M&E Department":
     elif selection == "Reports":
         link()
     
-# If Finance Department is selected, show the Finance Department options
-elif department == "Finance Department":
-    selection = st.selectbox("Select Option :", ("Commercial & Payable SPOC List",))
-    if selection == "Commercial & Payable SPOC List":
-        FinanceDepartment()
-
-# If HR Department is selected
-elif department == "HR Department":
-    st.image("upcoming.png")
 
 # Adding Google Form links
 google_form_link_retention = "[Retention Data](https://docs.google.com/spreadsheets/d/12vmZRZMWVuaqysaSRS0qVPAun53W6EsSztx9uUSiWzw/edit?usp=sharing)"
