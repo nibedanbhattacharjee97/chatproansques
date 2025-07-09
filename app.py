@@ -154,24 +154,24 @@ def link():
             st.markdown(f"[View Report]({report_link})", unsafe_allow_html=True)
         else:
             st.warning("No link available for this question.")
+# === Main Interface ===
+st.header("📚 M&E Department Chatbot")
 
-# Department selection
-department = st.selectbox("Select Department :", ("M&E Department")
+option = st.selectbox(
+    "Select Help Topic:",
+    ("Placement Parameters", "Enrollment Parameters", "M&E SPOC Details", "Certificate Process", "Reports")
+)
 
-# If ME Department is selected, show the options Placement, Enrollment, M&E SPOC, Certificate, and Reports
-if department == "M&E Department":
-    selection = st.selectbox("Select Option :", ("Placement Parameters", "Enrollment Parameters", "M&E SPOC Details", "Certificate Process", "Reports"))
-    if selection == "Placement Parameters":
-        Placement()
-    elif selection == "Enrollment Parameters":
-        Enrollment()
-    elif selection == "M&E SPOC Details":
-        spoc()
-    elif selection == "Certificate Process":
-        certificate()
-    elif selection == "Reports":
-        link()
-    
+if option == "Placement Parameters":
+    placement_section()
+elif option == "Enrollment Parameters":
+    enrollment_section()
+elif option == "M&E SPOC Details":
+    spoc_section()
+elif option == "Certificate Process":
+    certificate_section()
+elif option == "Reports":
+    reports_section()
 # If Finance Department is selected, show the Finance Department options
 elif department == "Finance Department":
     selection = st.selectbox("Select Option :", ("Commercial & Payable SPOC List",))
