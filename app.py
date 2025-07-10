@@ -171,11 +171,7 @@ if department == "M&E Department":
         certificate()
     elif selection == "Reports":
         link()
-    
 
-# Adding Google Form links
-google_form_link_retention = "[Retention Data](https://docs.google.com/spreadsheets/d/12vmZRZMWVuaqysaSRS0qVPAun53W6EsSztx9uUSiWzw/edit?usp=sharing)"
-st.markdown(google_form_link_retention)
 
 google_form_link_query = "[For Other Query Please Fill This Form](https://forms.gle/zsf1S146zbaaHuiWA)"
 st.markdown(google_form_link_query)
