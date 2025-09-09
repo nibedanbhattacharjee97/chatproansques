@@ -1,5 +1,6 @@
 ﻿Question,Answer,PicturePath
 Calling Script Placement,What is the calling script for Placement verification? As Follow,images/Calling_P.png
+Data Sanctity,"After tele-verification, we upload the data on CMIS with the status marked as ‘Joined’ or ‘Not Joined.’ If a student is marked as ‘Not Joined,’ the record will be automatically removed from CMIS after one month unless the center team re-verifies the data with the M&E SPOC",images/no fill.jpg
 Placement Document Verification TAT,"We have a TAT of 3 working days for placement document verification after the documents are uploaded on CMIS",images/no fill.jpg
 Document Verification Process,M&E Departmental Processing Flowchart? (Placement),images/FlowDocument.png
 What are the Mandatory Fields for Placement Document?,"Informations like – Company Name, Designation, Date of Joining, and Salary should exactly match with the attached documents in the CMIS portal.",images/pdf.png
@@ -22,6 +23,7 @@ Placement confirmation or Offer Letter through mail?,"In case of Placement confi
 If Placement confirmation received from Non-Domain Mail-ID?,"In case of placement confirmation received from Employer's Non-Domain Mail-ID [Like - Gmail, Yahoo & etc] Center has to upload the supporting documents along with it. Like - A) GSTIN Certificate, B) Trade Licence, C) PAN of the Organisation OR D) Salary Slip/Student Bank Statement.",images/no fill.jpg
 Required complete information i,"Complete placement information like Candidate name, DOJ, Designation, Salary, Employer Name required on placement documents, if anything missing on the above then required respective VP approval. After getting the VP approval please upload the VP approval along with the document on CMIS",images/no fill.jpg
 Data Security || Restricted Access to M&E Data and Applications,"    ",images/datasecruty.png
+
 
 
 
